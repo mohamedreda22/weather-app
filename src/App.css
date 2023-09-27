@@ -6,25 +6,28 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
 }
 
 .weather-app {
-  width: 300px;
+  width: 335px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .weather-card {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.514); 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  
+  backdrop-filter: blur(1px); 
 }
 
 .app-title {
@@ -57,6 +60,7 @@
   margin-left: 10px;
   cursor: pointer;
   color: #fff;
+  font-weight: bold;
 }
 
 .loading-spinner {
@@ -92,8 +96,9 @@
 }
 
 .description {
-  font-size: 18px;
+  font-size: 22px;
   color: #555;
+  text-decoration: double;  
 }
 
 .clear-weather {

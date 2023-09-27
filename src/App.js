@@ -9,10 +9,9 @@ import {
   WiThunderstorm,
   WiFog,
 } from 'react-icons/wi';
+
 const URL = "https://api.openweathermap.org/data/2.5/";
 const API_KEY = "f33a484cf794d08d0148764789aaba32";
-
-
 
 function App() {
   const [search, setSearch] = useState("");
@@ -55,49 +54,64 @@ function App() {
     const userInput = e.target.children[0].value.trim();
     if (userInput) {
       setSearch(userInput);
+      // to clear the search after submit use the next line, but I prefer not :)
+      //e.target.children[0].value = ''; 
     } else {
       setError("Please enter a city");
     }
   };
 
   const getWeatherIcon = () => {
-    const weatherDescription = (weather.weather[0]?.main || '').toLowerCase();
+    const weatherDescription = (weather.weather[0]?.description || '').toLowerCase();
 
-    switch (weatherDescription) {
-      case 'clear':
-        return <WiDaySunny className="weather-icon" />;
-      case 'clouds':
-        return <WiCloud className="weather-icon" />;
-      case 'rain':
-        return <WiRain className="weather-icon" />;
-      case 'snow':
-        return <WiSnow className="weather-icon" />;
-      case 'thunderstorm':
-        return <WiThunderstorm className="weather-icon" />;
-      case 'mist':
-        return <WiFog className="weather-icon" />;
-      default:
-        return null;
+    const weatherIconMap = {
+      'clear': <WiDaySunny className="weather-icon" />,
+      'clouds': <WiCloud className="weather-icon" />,
+      'rain': <WiRain className="weather-icon" />,
+      'snow': <WiSnow className="weather-icon" />,
+      'thunderstorm': <WiThunderstorm className="weather-icon" />,
+      'mist': <WiFog className="weather-icon" />,
+      'drizzle': <WiRain className="weather-icon" />,
+      'fog': <WiFog className="weather-icon" />,
+      'haze': <WiFog className="weather-icon" />,
+      'smoke': <WiFog className="weather-icon" />,
+      'dust': <WiFog className="weather-icon" />,
+      'sand': <WiFog className="weather-icon" />,
+      'ash': <WiFog className="weather-icon" />,
+      'squall': <WiFog className="weather-icon" />,
+      'tornado': <WiFog className="weather-icon" />,
+    };
+
+    // Loop through the keys and check if the description contains the key
+    for (const key in weatherIconMap) {
+      if (weatherDescription.includes(key)) {
+        return weatherIconMap[key];
+      }
     }
+
+    return null; 
   };
 
   const getBackgroundClass = () => {
-    const weatherDescription = (weather.weather[0]?.main || '').toLowerCase();
-  
-    switch (weatherDescription) {
-      case 'clear':
-        return 'clear-weather';
-      case 'rain':
-        return 'rainy-weather';
-      case 'snow':
-        return 'snowy-weather';
-      case 'thunderstorm':
-        return 'stormy-weather';
-      case 'mist':
-        return 'foggy-weather';
-      default:
-        return '';
+    const weatherDescription = (weather.weather[0]?.description || '').toLowerCase();
+    const backgroundClassMap = {
+      'clear': 'clear-weather',
+      'rain': 'rainy-weather',
+      'snow': 'snowy-weather',
+      'thunderstorm': 'stormy-weather',
+      'broken clouds': 'foggy-weather',
+      'drizzle': 'rainy-weather',
+      'fog': 'foggy-weather',
+    };
+
+    // Loop through the keys and check if the description contains the key
+    for (const key in backgroundClassMap) {
+      if (weatherDescription.includes(key)) {
+        return backgroundClassMap[key];
+      }
     }
+
+    return ''; 
   };
 
   return (
@@ -114,11 +128,13 @@ function App() {
           <div className="error">{error}</div>
         ) : (
           <div className="weather-info">
+            <div className='weather-card'>
             {getWeatherIcon()}
             
             <h2>{weather.name}</h2>
             <p className="temperature">{weather.main.temp}°C</p>
             <p className="description">{weather.weather[0].description}</p>
+          </div>
           </div>
         )}
       </div>
