@@ -1,4 +1,4 @@
-<img width="955" alt="333" src="https://github.com/mohamedreda22/weather-app/assets/73208810/fd8229b3-2d8d-469f-9381-604aa0b3327c"># Weather App
+# Weather App
 This is a simple web application that allows users to check the weather conditions for a specific city. It uses the OpenWeatherMap API to fetch weather data and displays it in a user-friendly format.
 
 # Preview
@@ -7,8 +7,7 @@ This is a simple web application that allows users to check the weather conditio
 <img width="955" alt="333" src="https://github.com/mohamedreda22/weather-app/assets/73208810/627de1c3-ca7d-4859-a205-ae11ef075475">
 
 # Live Demo on GitHub Pages
-    [https://mohamedreda22.github.io/weather-app/]
-ok.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+https://mohamedreda22.github.io/weather-app/
 
 ## Features
 
@@ -35,15 +34,15 @@ ok.github.io/create-react-app/docs/deployment](https://facebook.github.io/create
 1. **Clone the Repository:**
 [git clone https://github.com/mohamedreda22/weather-app.git]
 2. **Install Dependencies:**
-cd weather-app
-npm install
+[cd weather-app]
+[npm install]
 
 3. **Get an API Key:**
 
 You need to sign up on the [OpenWeatherMap website](https://openweathermap.org/) to get an API key. Replace `"YOUR_API_KEY"` in the code with your actual API key.
 
 4. **Run the Application:**
-npm start
+[npm start]
 
 The app will open in your default web browser.
 
