@@ -102,23 +102,23 @@
 }
 
 .clear-weather {
-  background-image: url('clear-weather.jpg');
+  background-image: url('./assets/clear-weather.jpg');
 }
 
 .rainy-weather {
-  background-image: url('rainy-weather.jpg');
+  background-image: url('./assets/rainy-weather.jpg');
 }
 
 .snowy-weather {
-  background-image: url('snowy-weather.jpeg');
+  background-image: url('./assets/snowy-weather.jpeg');
 }
 
 .stormy-weather {
-  background-image: url('stormy-weather.jpg');
+  background-image: url('./assets/stormy-weather.jpg');
 }
 
 .foggy-weather {
-  background-image: url('foggy-weather.jpg');
+  background-image: url('./assets/foggy-weather.jpg');
 }
 
 @keyframes spin {
